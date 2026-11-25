@@ -84,7 +84,7 @@ function karta(){
       (a.navyki.length?a.navyki.map(n=>chip(N[n])).join(''):'<span class="meta">своих навыков нет – работает по странице</span>')+'</div></div>';
   }
   const sv=D.karta.navyki.filter(n=>!n.kto.length);
-  if(sv.length)h+='<h2>Навыки без должности · '+sv.length+'</h2><div class="card"><div class="meta">Берёт главная сессия сама, ни одна страница должности их не называет.</div><div class="chips">'+sv.map(chip).join('')+'</div></div>';
+  if(sv.length)h+='<h2>Берёт сам Федя · '+sv.length+'</h2><div class="card"><div class="meta">Навыки вне должностей: Федя выбирает их по описанию.</div><div class="chips">'+sv.map(chip).join('')+'</div></div>';
   return h;
 }
 function chip(n){if(!n)return'';return '<button class="chip" onclick="navyk(\''+n.imya+'\')"><b>'+esc(n.imya)+'</b><i>'+n.kb+' КБ</i></button>'}
